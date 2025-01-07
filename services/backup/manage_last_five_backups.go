@@ -4,6 +4,8 @@ import (
 	"database/sql"
 	"fmt"
 
+	_ "modernc.org/sqlite"
+
 	_ "github.com/mattn/go-sqlite3"
 )
 
