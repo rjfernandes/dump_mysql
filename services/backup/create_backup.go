@@ -2,6 +2,7 @@ package backup
 
 import (
 	"fmt"
+	"log"
 	"os"
 	"os/exec"
 	"path/filepath"
@@ -27,6 +28,8 @@ func (db *DatabaseBackup) CreateBackup() (string, error) {
 		fmt.Sprintf("-u%s", db.User),
 		fmt.Sprintf("-p%s", db.Password),
 		db.Database)
+
+	log.Printf("Creating backup: %s\n", backupPath)
 
 	// Create the output file
 	outputFile, err := os.Create(backupPath)
